@@ -1,0 +1,85 @@
+
+
+html {
+    font-family: SF Pro SC, PingFangSC-Regular, Helvetica, Droid Sans, Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    font-size: 14px;
+    color: #1a1a1a;
+    overflow-x: hidden !important;
+    user-select: none;
+    /*禁止选中复制文本*/
+}
+
+
+input,
+textarea,
+button {
+    outline: 0 none;
+    border: none;
+    background-color: transparent;
+    border-color: transparent;
+    -webkit-appearance: none;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*设置placeholder通用样式*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #b0b1b8;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #b0b1b8;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #b0b1b8;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #b0b1b8;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+
+/** 设置光标颜色 start*/
+input {
+    color: #f01d24;
+    -webkit-text-fill-color: #1a1a1a;
+}
+
+@supports (caret-color: #f01d24) {
+
+    input,
+    textarea {
+        color: #1a1a1a;
+        caret-color: #f01d24;
+    }
+}
+
+/** 设置光标颜色 end*/
+
+
+html {
+    font-size: calc(100vw / 10); 
+}

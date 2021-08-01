@@ -4,11 +4,11 @@
     <div class = "item">
         <van-button type="primary" @click = "showModal">显示弹窗</van-button>
     </div>
-      <teleport to="#endofbody">
-        <common-modal title = "弹窗" v-model:isShow= "isShow" @closeModal = "closeModal">
+      <!-- <teleport to="#endofbody"> -->
+        <common-modal title = "弹窗" v-model= "isShow">
           <div class = "modal-content">弹窗内容</div>
         </common-modal>
-      </teleport>
+      <!-- </teleport> -->
   </div>
 </template>
 <script lang="ts">
@@ -19,19 +19,28 @@ export default  defineComponent({
   components: {
     CommonModal
   },
+  // data(){
+  //   return{
+  //     isShow: false,
+  //   }
+  // },
+  // methods: {
+  //  showModal () {
+  //    console.log("showModal...");
+  //     this.isShow = true;
+  //   },
+   
+  // }
 
   setup(){
     let isShow = ref(false);
     const showModal = () => {
       isShow.value = true;
     };
-    const closeModal = () => {
-      isShow.value = false;
-    };
     return {
       isShow,
       showModal,
-      closeModal
+     
     }
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-outer-wrapper" v-show="isShow">
+  <div class="modal-outer-wrapper" v-show= "modelValue">
     <div class="modal-mask"></div>
     <transition name="bounce">
       <div class="modal-inner-wrapper">
@@ -23,26 +23,31 @@ import { defineComponent, onMounted, onUnmounted, ref, toRefs, watch } from "vue
 
 export default defineComponent({
   props: {
-    isShow: {
-      //弹窗是否显示
-      type: Boolean,
-      default: false,
-    },
+    // isShow: {
+    //   //弹窗是否显示
+    //   type: Boolean,
+    //   default: false,
+    // },
+     modelValue: { type: Boolean, default: false },
     title: {
       type: String,
       default: "弹窗标题",
     },
   },
-  emits: ["closeModal"],
+  //emits: ["closeModal"],
+    emits: [
+            'update:modelValue'
+        ],
   setup(props, context) {
-    const { isShow } = toRefs(props);
+   // const { isShow } = toRefs(props);
     let scrollTop = ref(0);
     const closeModal = () => {
-      context.emit("closeModal");
+      //context.emit("closeModal");
+      context.emit("update:modelValue", false);
     };
     
-    watch(isShow, (isShow) => {
-      if (isShow) {
+    watch(()=>props.modelValue, (val) => {
+      if (val) {
         document.body.style.position = "fixed";
         document.body.style.top = `-${scrollTop.value}px`;
         document.body.style.right = '0';
@@ -53,6 +58,7 @@ export default defineComponent({
         document.documentElement.scrollTop = scrollTop.value;
         document.body.scrollTop= scrollTop.value;
       }
+    });
 
     
      const scrollEvent = () =>{
@@ -66,7 +72,7 @@ export default defineComponent({
       onUnmounted(()=>{
           window.removeEventListener('scroll', scrollEvent);
       });
-    });
+
 
     return {
       closeModal,

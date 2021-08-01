@@ -4,7 +4,7 @@
     <div class = "item">
         <van-button type="primary" @click = "showModal">显示弹窗</van-button>
     </div>
-      <teleport to="body">
+      <teleport to="#endofbody">
         <common-modal title = "弹窗" v-model:isShow= "isShow" @closeModal = "closeModal">
           <div class = "modal-content">弹窗内容</div>
         </common-modal>
@@ -44,11 +44,13 @@ export default  defineComponent({
         padding: 0.5rem;
 
     }
-    .modal-content{
+   
+
+}
+
+ .modal-content{
       font-size: 16Px;
       margin: 1rem;
     }
-
-}
 
 </style>

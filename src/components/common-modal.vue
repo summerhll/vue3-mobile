@@ -106,7 +106,7 @@ export default defineComponent({
     width: 100%;
     box-sizing: border-box;
     background: #fff;
-    min-height: 200px;
+    min-height: 200Px;
     .modal-header {
       position: relative;
       &:after {
@@ -121,18 +121,18 @@ export default defineComponent({
       }
     }
     .title {
-      font-size: 16px;
+      font-size: 16Px;
       color: #1b1c33;
       text-align: center;
-      padding: 22px 0 10px 0;
+      padding: 22Px 0 10Px 0;
       position: relative;
       font-weight: bold;
       img {
         position: absolute;
-        right: 16px;
-        top: 22px;
-        width: 16px;
-        height: 16px;
+        right: 16Px;
+        top: 22Px;
+        width: 16Px;
+        height: 16Px;
       }
     }
 

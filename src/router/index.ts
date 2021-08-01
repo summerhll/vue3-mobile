@@ -10,10 +10,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/leftDelete',
     name: 'leftDelete',
-    // route level code-splitting
-    // this generates a separate chunk (leftDelete.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "leftDelete" */ '../views/LeftDelete.vue')
+  },
+  {
+    path: '/modal',
+    name: 'modal',
+    component: () => import(/* webpackChunkName: "modal" */ '../views/modal.vue')
   }
 ]
 

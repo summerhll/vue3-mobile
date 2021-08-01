@@ -4,11 +4,11 @@
     <div class = "item">
         <van-button type="primary" @click = "showModal">显示弹窗</van-button>
     </div>
-      <!-- <teleport to="#endofbody"> -->
+      <teleport to="body">
         <common-modal title = "弹窗" v-model= "isShow">
           <div class = "modal-content">弹窗内容</div>
         </common-modal>
-      <!-- </teleport> -->
+      </teleport>
   </div>
 </template>
 <script lang="ts">

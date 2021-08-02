@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <van-nav-bar title="标题" left-text="返回" right-text="按钮" left-arrow />
+    <van-nav-bar title="示例列表" />
 
     <van-grid>
       <van-grid-item icon="photo-o" text="模态窗"  to = "/modal"/>

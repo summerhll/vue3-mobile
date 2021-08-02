@@ -1,6 +1,6 @@
 <template>
   <div class="modal-wrapper">
-    <van-nav-bar title="弹窗示例" left-text="首页"  left-arrow />
+    <van-nav-bar title="弹窗示例" left-text="首页"  left-arrow  @click-left = "goHome"/>
     <div class = "item">
         <van-button type="primary" @click = "showModal">显示弹窗</van-button>
     </div>
@@ -13,33 +13,28 @@
 </template>
 <script lang="ts">
 import  { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router'
 import CommonModal from '../components/common-modal.vue'
 export default  defineComponent({
   name: "modal",
   components: {
     CommonModal
   },
-  // data(){
-  //   return{
-  //     isShow: false,
-  //   }
-  // },
-  // methods: {
-  //  showModal () {
-  //    console.log("showModal...");
-  //     this.isShow = true;
-  //   },
-   
-  // }
 
   setup(){
     let isShow = ref(false);
     const showModal = () => {
       isShow.value = true;
     };
+
+   const router = useRouter();
+    const goHome = () =>{
+     router.push("/");
+    }
     return {
       isShow,
       showModal,
+      goHome
      
     }
   }

@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/modal',
     name: 'modal',
     component: () => import(/* webpackChunkName: "modal" */ '../views/modal.vue')
+  },
+  {
+    path: '/pullDown', 
+    name: 'pullDown',
+    component: () => import(/* webpackChunkName: "pullDowm" */ '../views/pullDown.vue')
   }
 ]
 
